@@ -29,7 +29,7 @@ class PropDetalle extends React.Component {
     return new Promise((resolve, reject) => {
       const propId = match.params.propId;
       console.log('HEY', propId);
-      axios.get('http://zitroinmobilaria.com:3005/api/Propiedads/' + propId, {
+      axios.get('http://zitroinmobiliaria.com:3005/api/Propiedads/' + propId, {
         params: {
           include: 'contacto'
         }
@@ -56,7 +56,7 @@ class PropDetalle extends React.Component {
             console.log('merca', geoAddr);
             return geoAddr;
           }
-          axios.get('http://zitroinmobilaria.com:3005/api/Contactos/' + prop.data.contactoId)
+          axios.get('http://zitroinmobiliaria.com:3005/api/Contactos/' + prop.data.contactoId)
             .then(ctc => {
               prop.data.contacto = ctc.data;
               axios.get(`https://maps.googleapis.com/maps/api/geocode/json?${makeAddress()}&key=AIzaSyDCPoPkBr7xqz0YNxeNi94n-YhrtAH5ID8`)
@@ -94,9 +94,9 @@ class PropDetalle extends React.Component {
       if (this.props.propiedad['foto_' + (i+1)]) {
         console.log('photo', this.props.propiedad['foto_' + (i+1)])
         if (i === 0) {
-          array.push('http://zitroinmobilaria.com:3005/api/containers/thumbs/download/' + this.props.propiedad['foto_' + (i+1)])
+          array.push('http://zitroinmobiliaria.com:3005/api/containers/thumbs/download/' + this.props.propiedad['foto_' + (i+1)])
         } else {
-          array.push('http://zitroinmobilaria.com:3005/api/containers/images/download/' + this.props.propiedad['foto_' + (i+1)])
+          array.push('http://zitroinmobiliaria.com:3005/api/containers/images/download/' + this.props.propiedad['foto_' + (i+1)])
         }
       } else {
         console.log('orto', this.props.propiedad['foto_' + (i+1)])
@@ -114,7 +114,7 @@ class PropDetalle extends React.Component {
 
     return (
       <div className="section-3">
-        <div className="div-block-6" style={{ backgroundImage: "url(" + 'http://zitroinmobilaria.com:3005/api/containers/thumbs/download/' + propiedad['foto_1'] + ")" }}>
+        <div className="div-block-6" style={{ backgroundImage: "url(" + 'http://zitroinmobiliaria.com:3005/api/containers/thumbs/download/' + propiedad['foto_1'] + ")" }}>
           <div data-w-id="1cc02ff7-1130-7824-be9b-ebfe0c6277d3" style={{ opacity: '0.45', WebkitTransform: 'translateX(0) translateY(0PX) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0)', MozTransform: 'translateX(0) translateY(0PX) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0)', msTransform: 'translateX(0) translateY(0PX) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0)', transform: 'translateX(0) translateY(0PX) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0)' }} className="div-block-17" />
         </div>
         <div className="div-block-8">
@@ -204,7 +204,7 @@ class PropDetalle extends React.Component {
                   {propiedad.descripcion}
                 </p>
               </div><a href="#" className="lightbox-link w-inline-block w-lightbox">
-                <img src={'http://zitroinmobilaria.com:3005/api/containers/thumbs/download/' + propiedad['foto_1']} sizes="(max-width: 479px) 99vw, (max-width: 767px) 98vw, (max-width: 991px) 72vw, 64vw" className="image-6" />
+                <img src={'http://zitroinmobiliaria.com:3005/api/containers/thumbs/download/' + propiedad['foto_1']} sizes="(max-width: 479px) 99vw, (max-width: 767px) 98vw, (max-width: 991px) 72vw, 64vw" className="image-6" />
                 <div data-w-id="895b7f29-a015-a1e1-4dcf-7958f7f1b4b7" className="div-block-11">
                   <div data-w-id="80a4786e-a09e-c446-6e7f-a970df2cf208" className="text-block-6" onClick={() => this.setState({ isOpen: true })}>
                     Hacer click para ir a galería de imágenes
