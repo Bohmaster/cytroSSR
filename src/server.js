@@ -89,7 +89,7 @@ server
                     .w-col {
                     }
                   </style>
-                  <script src="${assets.client.js}" defer></script>
+                  <script src="http://zitroinmobiliaria.com:3001/static/js/bundle.js" defer></script>
                </head>
                <body class="body">
                   <div data-w-id="cd093772-4edd-29cb-9962-0192ac4363ca" class="div-block-18">

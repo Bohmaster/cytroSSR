@@ -108,7 +108,7 @@ class Users extends React.Component {
     return (
       <div>
         <div className="buscador" style={{marginTop: 60}}>
-              <div className="w-form">
+        <div className="w-form">
                 <form>
                   <div className="div-block-4">
                     <div className="radiobuttonbuscador w-radio">
@@ -159,7 +159,8 @@ class Users extends React.Component {
                             <option value="3 Dormitorio">3 Dormitorios</option>
                             <option value="4 Dormitorio">4 Dormitorios o màs</option>
                           </select></div>
-                    </div>
+                    </div>                  
+        
                     <div className="w-col w-col-3 w-col-medium-6">
                       <div>
                         <div className="txtbuscador">Búsqueda directa</div>
@@ -181,49 +182,73 @@ class Users extends React.Component {
         </div>
         
         {
-          this.formatCols(resultados).map((propiedades, idx) => {
-            console.log(propiedades);
+          this.formatCols(this.filterVendidas()).map((propiedades, idx) => {
             return (
             <div className="rowpropiedades w-row" key={idx}>
               { propiedades[0] && <div className="w-col w-col-4 w-col-small-small-stack">
                 <div className="divpropiedad">
-                <a href="propiedad.html" target="_blank" className="link-block w-inline-block"><img src="images/propiedad.jpg" srcSet="images/propiedad-p-500.jpeg 500w, images/propiedad.jpg 800w" sizes="(max-width: 767px) 92vw, (max-width: 991px) 29vw, 28vw" className="imgpropiedad" />
+                <a href={'/propiedad?propId=' + propiedades[0].id} className="link-block w-inline-block">
+                <img src={'http://zitroinmobiliaria.com:3005/api/containers/mercas/download/' + propiedades[0]['foto_1_thumb']}  />
                 <div className="divvendida">
-                <img src="images/vendida_2.png" className="imgvendida" />
-                <img src="images/alquilada.png" className="imgalquilada" />
-                <img src="images/reservada.png" className="imgreservada" /></div>
+                  {
+                    propiedades[0].vendidaOalquilada === 'vendida' && <img src="images/vendida_2.png" className="imgvendida" />
+                  }
+                  {
+                    propiedades[0].vendidaOalquilada === 'alquilada' && <img src="images/alquilada.png" className="imgalquilada" />
+
+                  }
+                  {
+                    propiedades[0].vendidaOalquilada === 'reservada' && <img src="images/reservada.png" className="imgreservada" />
+                  }
+                </div>
                 <div className="divdatospropiedad">
-                <h2 className="heading-4">{propiedades[0].nombre}</h2>
-                <div className="txtpropiedad">Av. Pellegrini 1343<br />
-                xxxxx</div></div><div className="divaptocredito">Apta Crédito</div></a></div>
+                <h2 className="heading-4">{propiedades[0].tipoPropiedad + ' ' + propiedades[0].dormitorios}</h2>
+                <div className="txtpropiedad">{propiedades[0].direccion + ' ' + propiedades[0].localidad}</div>
+                </div><div className="divaptocredito">Apta Crédito</div></a></div>
               </div>
               }
               { propiedades[1] && <div className="w-col w-col-4 w-col-small-small-stack">
                 <div className="divpropiedad">
-                <a href="propiedad.html" target="_blank" className="link-block w-inline-block"><img src="images/propiedad.jpg" srcSet="images/propiedad-p-500.jpeg 500w, images/propiedad.jpg 800w" sizes="(max-width: 767px) 92vw, (max-width: 991px) 29vw, 28vw" className="imgpropiedad" />
+                <a href={'/propiedad?propId=' + propiedades[1].id} className="link-block w-inline-block"><img src={'http://zitroinmobiliaria.com:3005/api/containers/mercas/download/' + propiedades[1]['foto_1_thumb']}  />
                 <div className="divvendida">
-                <img src="images/vendida_2.png" className="imgvendida" />
-                <img src="images/alquilada.png" className="imgalquilada" />
-                <img src="images/reservada.png" className="imgreservada" /></div>
+                {
+                    propiedades[1].vendidaOalquilada === 'vendida' && <img src="images/vendida_2.png" className="imgvendida" />
+                  }
+                  {
+                    propiedades[1].vendidaOalquilada === 'alquilada' && <img src="images/alquilada.png" className="imgalquilada" />
+
+                  }
+                  {
+                    propiedades[1].vendidaOalquilada === 'reservada' && <img src="images/reservada.png" className="imgreservada" />
+                  }
+                </div>
                 <div className="divdatospropiedad">
-                <h2 className="heading-4">{propiedades[1].nombre}</h2>
-                <div className="txtpropiedad">Av. Pellegrini 1343<br />
-                xxxxx</div></div><div className="divaptocredito">Apta Crédito
+                <h2 className="heading-4">{propiedades[1].tipoPropiedad + ' ' + propiedades[1].dormitorios}</h2>
+                <div className="txtpropiedad">{propiedades[1].direccion + ' ' + propiedades[1].localidad}</div>
+                </div><div className="divaptocredito">Apta Crédito
                 </div></a></div>
               </div>
               }
               
               { propiedades[2] && <div className="w-col w-col-4 w-col-small-small-stack">
                 <div className="divpropiedad">
-                <a href="propiedad.html" target="_blank" className="link-block w-inline-block"><img src="images/propiedad.jpg" srcSet="images/propiedad-p-500.jpeg 500w, images/propiedad.jpg 800w" sizes="(max-width: 767px) 92vw, (max-width: 991px) 29vw, 28vw" className="imgpropiedad" />
+                <a href={'/propiedad?propId=' + propiedades[2].id} className="link-block w-inline-block"><img src={'http://zitroinmobiliaria.com:3005/api/containers/mercas/download/' + propiedades[2]['foto_1_thumb']}  />
                 <div className="divvendida">
-                <img src="images/vendida_2.png" className="imgvendida" />
-                <img src="images/alquilada.png" className="imgalquilada" />
-                <img src="images/reservada.png" className="imgreservada" /></div>
+                {
+                    propiedades[2].vendidaOalquilada === 'vendida' && <img src="images/vendida_2.png" className="imgvendida" />
+                  }
+                  {
+                    propiedades[2].vendidaOalquilada === 'alquilada' && <img src="images/alquilada.png" className="imgalquilada" />
+
+                  }
+                  {
+                    propiedades[2].vendidaOalquilada === 'reservada' && <img src="images/reservada.png" className="imgreservada" />
+                  }
+                </div>
                 <div className="divdatospropiedad">
-                <h2 className="heading-4">{propiedades[2].nombre}</h2>
-                <div className="txtpropiedad">Av. Pellegrini 1343<br />
-                xxxxx</div></div><div className="divaptocredito">Apta Crédito
+                <h2 className="heading-4">{propiedades[2].tipoPropiedad + ' ' + propiedades[2].dormitorios}</h2>
+                <div className="txtpropiedad">{propiedades[2].direccion + ' ' + propiedades[2].localidad}</div>
+                </div><div className="divaptocredito">Apta Crédito
                 </div></a></div>
                </div>}
 
