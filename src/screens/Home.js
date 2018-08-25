@@ -7,7 +7,7 @@ class Home extends React.Component {
   // This works similarly to Next.js's `getInitialProps`
   static getInitialData() {
     return new Promise((resolve, reject) => {
-      axios.get('http://localhost:3005/api/Propiedads')
+      axios.get('http://zitroinmobilaria.com:3005/api/Propiedads')
         .then(props => {
           resolve({
             propiedades: props.data
@@ -93,14 +93,14 @@ class Home extends React.Component {
               <div className="social"><a href="#" className="linksocial w-inline-block"><img src="images/face.png" alt="icono Facebook" className="imgicon" /></a><a href="#" className="linksocial w-inline-block"><img src="images/twitter.png" alt="icono twitter" className="imgicon" /></a><a href="#" className="linksocial w-inline-block"><img src="images/google.png" alt="icono Google" className="imgicon" /></a></div>
             </div>
             <div className="mask w-slider-mask">
-              <div className="slide _1 w-slide" style={{backgroundImage: `url("http://localhost:3005/api/containers/thumbs/download/${propiedades[0]['foto_1']}")`}}>
+              <div className="slide _1 w-slide" style={{backgroundImage: `url("http://zitroinmobilaria.com:3005/api/containers/thumbs/download/${propiedades[0]['foto_1']}")`}}>
                 <a href="#" className="linkslider w-inline-block">
                   <div className="sobreslide">
                     <h2 className="txtslide">Terrazas al green<br />Exclusivos departamentos</h2>
                   </div>
                 </a>
               </div>
-              <div className="slide _2 w-slide" style={{backgroundImage: `url("http://localhost:3005/api/containers/thumbs/download/${propiedades[1]['foto_1']}")`}}>
+              <div className="slide _2 w-slide" style={{backgroundImage: propiedades[0] ? `url("http://zitroinmobilaria.com:3005/api/containers/thumbs/download/${propiedades[1]['foto_1']}")`: null}}>
                 <a href="#" className="linkslider w-inline-block">
                   <div className="sobreslide">
                     <h2 className="txtslide">Terrazas al green<br />Departamento 2 dormitorios</h2>
@@ -238,7 +238,7 @@ class Home extends React.Component {
                   <div className="w-col w-col-6">
                   <a href={'/propiedad?propId=' + props[0].id} class="propdestaca w-inline-block">
 
-                    <img src={'http://localhost:3005/api/containers/mercas/download/' + props[0]['foto_1_thumb']} />
+                    <img src={'http://zitroinmobilaria.com:3005/api/containers/mercas/download/' + props[0]['foto_1_thumb']} />
                       <div className="datosdestaca">
                         <h2 className="heading-2">{props[0].tipoPropiedad + ' ' + props[0].dormitorios}</h2>
                         <div className="txtdestaca">{props[0].direccion + ' ' + props[0].localidad}><br />
@@ -264,7 +264,7 @@ class Home extends React.Component {
                     <div className="detalledestaca">
                       <div className="txtdestaca">
                         <a href={'/propiedad?propId=' + props[1].id} class="propdestaca w-inline-block">
-                          <img src={'http://localhost:3005/api/containers/mercas/download/' + props[1]['foto_1_thumb']} />
+                          <img src={'http://zitroinmobilaria.com:3005/api/containers/mercas/download/' + props[1]['foto_1_thumb']} />
                           <div className="datosdestaca">
                           <h2 className="heading-2">{props[1].tipoPropiedad + ' ' + props[1].dormitorios}</h2>
                           <div className="txtdestaca">{props[1].direccion + ' ' + props[1].localidad}<br /></div>

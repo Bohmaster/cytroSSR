@@ -9,7 +9,7 @@ import axios from 'axios';
 class Propiedades extends React.Component {
   static getInitialData({ req, res, match }) {
     return new Promise((resolve, reject) => {
-      axios.get('http://localhost:3005/api/Propiedads')
+      axios.get('http://zitroinmobilaria.com:3005/api/Propiedads')
         .then(prop => {
           // console.log('ASD', prop)
           resolve({
@@ -189,7 +189,7 @@ class Propiedades extends React.Component {
               { propiedades[0] && <div className="w-col w-col-4 w-col-small-small-stack">
                 <div className="divpropiedad">
                 <a href={'/propiedad?propId=' + propiedades[0].id} className="link-block w-inline-block">
-                <img src={'http://localhost:3005/api/containers/mercas/download/' + propiedades[0]['foto_1_thumb']}  />
+                <img src={'http://zitroinmobilaria.com:3005/api/containers/mercas/download/' + propiedades[0]['foto_1_thumb']}  />
                 <div className="divvendida">
                   {
                     propiedades[0].vendidaOalquilada === 'vendida' && <img src="images/vendida_2.png" className="imgvendida" />
@@ -210,7 +210,7 @@ class Propiedades extends React.Component {
               }
               { propiedades[1] && <div className="w-col w-col-4 w-col-small-small-stack">
                 <div className="divpropiedad">
-                <a href={'/propiedad?propId=' + propiedades[1].id} className="link-block w-inline-block"><img src={'http://localhost:3005/api/containers/mercas/download/' + propiedades[1]['foto_1_thumb']}  />
+                <a href={'/propiedad?propId=' + propiedades[1].id} className="link-block w-inline-block"><img src={'http://zitroinmobilaria.com:3005/api/containers/mercas/download/' + propiedades[1]['foto_1_thumb']}  />
                 <div className="divvendida">
                 {
                     propiedades[1].vendidaOalquilada === 'vendida' && <img src="images/vendida_2.png" className="imgvendida" />
@@ -233,7 +233,7 @@ class Propiedades extends React.Component {
               
               { propiedades[2] && <div className="w-col w-col-4 w-col-small-small-stack">
                 <div className="divpropiedad">
-                <a href={'/propiedad?propId=' + propiedades[2].id} className="link-block w-inline-block"><img src={'http://localhost:3005/api/containers/mercas/download/' + propiedades[2]['foto_1_thumb']}  />
+                <a href={'/propiedad?propId=' + propiedades[2].id} className="link-block w-inline-block"><img src={'http://zitroinmobilaria.com:3005/api/containers/mercas/download/' + propiedades[2]['foto_1_thumb']}  />
                 <div className="divvendida">
                 {
                     propiedades[2].vendidaOalquilada === 'vendida' && <img src="images/vendida_2.png" className="imgvendida" />
@@ -267,7 +267,7 @@ class Propiedades extends React.Component {
             <div className="rowpropiedades w-row" key={idx}>
               { propiedades[0] && <div className="w-col w-col-4 w-col-small-small-stack">
                 <div className="divpropiedad">
-                <a href={'/propiedad?propId=' + propiedades[0].id} className="link-block w-inline-block"><img src={'http://localhost:3005/api/containers/mercas/download/' + propiedades[0]['foto_1_thumb']} />
+                <a href={'/propiedad?propId=' + propiedades[0].id} className="link-block w-inline-block"><img src={'http://zitroinmobilaria.com:3005/api/containers/mercas/download/' + propiedades[0]['foto_1_thumb']} />
                 <div className="divvendida">
                   {
                     propiedades[0].vendidaOalquilada === 'vendida' && <img src="images/vendida_2.png" className="imgvendida" />
@@ -288,7 +288,7 @@ class Propiedades extends React.Component {
               }
               { propiedades[1] && <div className="w-col w-col-4 w-col-small-small-stack">
                 <div className="divpropiedad">
-                <a href={'/propiedad?propId=' + propiedades[1].id} className="link-block w-inline-block"><img src={'http://localhost:3005/api/containers/mercas/download/' + propiedades[1]['foto_1_thumb']}  />
+                <a href={'/propiedad?propId=' + propiedades[1].id} className="link-block w-inline-block"><img src={'http://zitroinmobilaria.com:3005/api/containers/mercas/download/' + propiedades[1]['foto_1_thumb']}  />
                 <div className="divvendida">
                 {
                     propiedades[1].vendidaOalquilada === 'vendida' && <img src="images/vendida_2.png" className="imgvendida" />
@@ -311,7 +311,7 @@ class Propiedades extends React.Component {
               
               { propiedades[2] && <div className="w-col w-col-4 w-col-small-small-stack">
                 <div className="divpropiedad">
-                <a href={'/propiedad?propId=' + propiedades[2].id} className="link-block w-inline-block"><img src={'http://localhost:3005/api/containers/mercas/download/' + propiedades[2]['foto_1_thumb']}  />
+                <a href={'/propiedad?propId=' + propiedades[2].id} className="link-block w-inline-block"><img src={'http://zitroinmobilaria.com:3005/api/containers/mercas/download/' + propiedades[2]['foto_1_thumb']}  />
                 <div className="divvendida">
                 {
                     propiedades[2].vendidaOalquilada === 'vendida' && <img src="images/vendida_2.png" className="imgvendida" />

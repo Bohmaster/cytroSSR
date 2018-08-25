@@ -16,7 +16,7 @@ class Users extends React.Component {
     }
 
     return new Promise((resolve, reject) => {
-      axios.get('http://localhost:3005/api/Propiedads', {
+      axios.get('http://zitroinmobilaria.com:3005/api/Propiedads', {
         params: {
           filter: {
             where
